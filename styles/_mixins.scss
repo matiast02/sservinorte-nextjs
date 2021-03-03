@@ -1,0 +1,21 @@
+/*
+
+@media (min-width: 601px) {
+
+}
+
+320px. smSmart
+480px. mdSmart
+600px. lgSmart
+768px. mdTablet
+900px. lgTablet
+1024px. smDesktop
+1200px. mdDesktop
+
+*/
+
+@mixin desktop() {
+    @media (max-width: 600px) {
+      @content;
+    }
+}
