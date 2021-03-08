@@ -7,7 +7,6 @@ export default function Index() {
     <div>
       
       <HomeLayout>
-        <h2>desde index</h2>
         <HeroSection />
       </HomeLayout>
     
