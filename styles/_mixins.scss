@@ -14,8 +14,57 @@
 
 */
 
-@mixin desktop() {
-    @media (max-width: 600px) {
-      @content;
-    }
+
+$primary: #011E4F;
+$primary-light: #182E59;
+$secondary: #03346C;
+$dark: #1A1A1A; 
+$black-text: #0a0a0aaa;
+$white-text: #fafafa;
+
+/* media querys */ 
+
+@mixin mdSmart () {
+  @media (min-width: 480px) {
+    @content;
+  }
 }
+
+@mixin lgSmart () {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin lgTablet() {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mdTablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin smDesktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mdDesktop() {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin lgDesktop() {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+

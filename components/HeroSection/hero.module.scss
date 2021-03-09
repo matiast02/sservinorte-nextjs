@@ -1,0 +1,233 @@
+@import '../../styles/mixins';
+@import '_animations.scss';
+
+.hero {
+    
+    background-image:  linear-gradient(90deg, rgba(1,30,79, .8) 30%, rgba(255,255,255,0.2) 100%),
+    url(../../public/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    @include smDesktop {
+        flex-direction: row;
+    }
+
+}
+
+.brand {
+
+    width: 100%;
+    position: relative;
+
+    &Logo {
+        width: 60%;
+        margin-top: 1rem;
+
+        @include smDesktop {
+            width: 50%;
+        }
+    }
+    
+    
+    
+}
+
+.gear {
+    
+    filter: invert(100%) sepia(0%) saturate(7481%) hue-rotate(351deg) brightness(107%) contrast(108%);
+    
+    &Top {
+        position: absolute;
+        width: 12rem;
+        top: -7rem;
+        left: -5rem;
+        animation: spin 10s infinite;
+
+        @include smDesktop {
+            width: 25rem;
+            top: -12rem;
+            left: -10rem;    
+        }
+        
+    }
+    
+    &Bottom {
+        align-self: flex-end;
+        position: absolute;
+        top: -2rem;
+        animation: spin 5s infinite reverse;
+
+        @include smDesktop {
+            bottom: -15rem;
+            right:50rem;
+            top:auto;
+            width: 25rem;      
+        }
+        
+    }
+}
+
+
+
+
+.contact {
+    width: 90%;
+    color: #fff;
+    margin-top: 1.5rem;
+    padding-bottom: 5rem;
+
+    @include mdTablet {
+        width: 70%;
+    }
+
+
+    @include lgTablet {
+        width: 65%;
+    }
+   
+    
+    @include smDesktop {
+        display: flex;      
+        width: 60%;
+        justify-content: center;
+    }
+
+    @include mdDesktop {     
+        width: 100%;
+    }
+    
+
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+
+        @include smDesktop {
+            font-size: 1.8rem;
+        }
+    }
+
+
+    &Form {
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include smDesktop {     
+        width: 80%;
+    }
+
+    @include mdDesktop {     
+        width: 70%;
+    }
+
+    @include lgDesktop {     
+        width: 50%;
+    }
+
+    input {
+        color: $black-text;
+        border-color: transparent;
+        border-radius: 3px;
+        height: 2rem;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        width: 100%;
+
+
+        &:focus {
+            outline: none;
+        }                   
+    }
+
+    button {
+        align-self: flex-end;
+        border-color: transparent;
+        border-radius: 3px;
+        color: $white-text;
+        background-color: lighten($secondary, $amount: 10);
+        height: 1.5rem;
+        letter-spacing: 3px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+        height: auto;
+        transition: all 0.5s ease;
+        font-size: 1.2rem;
+
+        @include smDesktop {
+            font-size: 1rem;      
+        }
+        
+
+   
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($secondary, $amount: 25);
+            transform: scale(.98);
+        }
+    }
+
+    label {
+        color:white;
+        text-align: left;
+
+        @include smDesktop {     
+            font-weight: bold;
+        }
+    }
+
+    .message {
+        border-color: transparent;
+        border-radius: 3px;
+        color: $black-text;
+        font-size: 1.4rem;
+        padding: 0.5rem;
+        resize: none;
+
+        
+        &:focus {
+            outline: none;
+        }
+    }
+
+    }
+
+
+    .groupInput {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        @include smDesktop {     
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+    
+    .groupInputControl {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        label {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+    }
+}

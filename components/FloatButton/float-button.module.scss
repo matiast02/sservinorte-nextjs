@@ -1,0 +1,39 @@
+@import '../../styles/mixins';
+
+/* floating button */
+.floatButton {
+    background-color: white;
+    border-radius: 50%;
+    border-color: $secondary;
+    border-width: 5px;
+    bottom: 20px;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    right: 10px;
+    transition: all .5s ease;
+
+    @include mdDesktop {
+        bottom: 30px;
+        height: 90px;
+        width: 90px;
+        right: 30px;
+    }
+
+
+
+  
+    & img {
+        width: 40px;
+        height: 40px;
+    }
+  
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+  
+    &:focus {
+        outline: none;
+    }
+  }

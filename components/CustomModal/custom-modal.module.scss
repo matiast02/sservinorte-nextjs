@@ -1,0 +1,169 @@
+@import '../../styles/mixins';
+
+.customModal {
+    align-items: center;
+    background-color: rgba( $primary, 0.9);
+    backdrop-filter: 5px;
+    bottom: 0;
+    display: none;
+    min-height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-y: hidden;
+    transition: all 2s ease;
+    z-index: 2;
+
+    &Container{
+        border-radius: 5px;
+        background-color: white;
+        color: $black-text;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        -webkit-box-shadow: 2px 7px 48px 0px rgb(46, 104, 172);
+        -moz-box-shadow: 2px 7px 48px 0px rgb(46, 104, 172);
+        box-shadow: 2px 7px 48px 0px rgb(46, 104, 172);
+
+        @include lgTablet {
+            height: 80%;
+            align-items: center;
+        }
+
+        @include smDesktop {
+            flex-direction: row;
+            height: 50%;
+            max-width: 70%;
+        }
+
+        @include mdDesktop {
+            flex-direction: row;
+            height: 50%;
+            max-width: 60%;
+        }
+
+
+        &Img {
+            order: 2;
+
+            @include smDesktop {
+                order: 0;
+                height: 100%;
+            }
+            
+            img {
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                width: 100%;
+
+                @include lgTablet {
+                    border-top-right-radius: 0px;
+                    border-top-left-radius: 0px;
+                }
+
+                @include smDesktop {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    height: 100%;
+                }
+        
+            }
+        }
+
+
+        &Info{
+            order: 1;
+            display: flex;
+            flex-direction: column;
+
+          
+            h1 {
+                font-size: 1.5rem;
+                text-align: center;
+
+                @include mdSmart {
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+
+                @include mdSmart {
+                    padding-top: 2rem;
+                }
+
+                @include smDesktop {
+                    padding-top: 0;
+                    font-size: 2rem;
+                }
+                
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                @include smDesktop {
+                    padding-left:4rem;
+                }
+
+                li {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-top: 0.5rem;
+                }
+            }
+
+            i {
+                color: lighten($color: $secondary, $amount: 10);
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+
+    .closeButton {
+        position: absolute;
+        right: 3rem;
+        top: 6rem;
+        order: 0;
+        border: none;
+
+        @include mdSmart {
+            top: 8rem;
+            right: 4rem;
+            font-size: 1.4rem;
+        }
+
+        @include mdSmart {
+            top: 7rem;
+            right: 5rem;
+            font-size: 1.5rem;
+        }
+
+        @include smDesktop {
+            order: 2;
+            top: 14rem;
+            right: 12rem;
+        }
+
+        @include lgDesktop {
+            order: 2;
+            top: 15rem;
+            right: 25rem;
+        }
+        
+    }
+}
+
+.showModal {
+    display: flex;
+}
+
+
+.hideModal {
+    opacity: 0;
+}
